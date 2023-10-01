@@ -176,11 +176,11 @@ public class ControleCadastros extends JFrame {
     
     private void alterarContato() {
     try (Connection connection = conectarBancoDados()) {
-        int idContato = 1;
-        String query = "UPDATE contatos SET telefone = (11) 9999-8899, email = joaoM@gmail.com WHERE id = 1";
+        int idContato = 2;
+        String query = "UPDATE contatos SET telefone = (11) 1234-5678, email = joao@example.com WHERE id = 1";
         try (PreparedStatement preparedStatement = connection.prepareStatement(query)) {
             preparedStatement.setString(1, "(11) 9999-8888"); 
-            preparedStatement.setString(2, "joao@gmail.com"); 
+            preparedStatement.setString(2, "joao_novo@example.com"); 
             preparedStatement.setInt(3, idContato);
             int rowsUpdated = preparedStatement.executeUpdate();
             if (rowsUpdated > 0) {
